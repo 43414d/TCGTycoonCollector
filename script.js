@@ -1,18 +1,18 @@
-fetch("products.json")
+fetch("cards.json")
 .then(function(response){
    return response.json();
 })
-.then(function(products){
+.then(function(cards){
    let placeholder = document.querySelector("#data-output");
    let out = "";
-   for(let product of products){
+   for(let card of cards){
       out += `
          <tr>
-            <td> <img src='${product.image}'> </td>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
-            <td>${product.inventory}</td>
-            <td>${product.productCode}</td>
+            <td> <img src='${card.image}'> </td>
+            <td>${card.name}</td>
+            <td>${card.price}</td>
+            <td>${card.inventory}</td>
+            <td>${card.productCode}</td>
          </tr>
       `;
    }
